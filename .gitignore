@@ -5,3 +5,4 @@ external/
 weights/
 campaigns/*/output/
 campaigns/*/audio/*.wav
+campaigns/*/avatar_input.json

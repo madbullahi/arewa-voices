@@ -14,6 +14,13 @@
   },
   "images": [
     {
+      "name": "presenter",
+      "width": 768,
+      "height": 1344,
+      "seed": 11,
+      "prompt": "A photorealistic portrait of a friendly middle-aged Northern Nigerian woman teacher wearing a colourful hijab, facing the camera with a warm expression, sitting in a bright classroom with a chalkboard behind her, soft natural light, vertical framing from the chest up"
+    },
+    {
       "name": "poster_en",
       "width": 768,
       "height": 1344,

@@ -35,4 +35,24 @@ bash scripts/generate_avatar_video.sh campaigns/out-of-school-children
 
 ## 3. Voiceover
 
-Record the Hausa voiceover with a consenting human speaker (preferred), or use a TTS tool that supports Hausa. Save it as `campaigns/<issue>/audio/voiceover.wav`.
+`scripts/make_voiceover.py` creates `campaigns/<issue>/audio/voiceover.wav` and the `avatar_input.json` that the video step needs.
+
+**Preferred: a human recording.** Record a consenting Hausa speaker, then:
+
+```bash
+python scripts/make_voiceover.py --campaign campaigns/out-of-school-children --audio recording.wav
+```
+
+**Draft: text-to-speech.** Uses Meta's MMS models (`facebook/mms-tts-hau`, `facebook/mms-tts-eng`). They are licensed CC-BY-NC 4.0, so use them for drafts and non-commercial posts only.
+
+```bash
+python scripts/make_voiceover.py --campaign campaigns/out-of-school-children --lang ha
+```
+
+The script stops if `script_ha` in `script.json` is still a TODO.
+
+## Full order of steps
+
+1. `python scripts/generate_image.py --campaign <campaign>` (makes the presenter portrait, poster and thumbnail)
+2. `python scripts/make_voiceover.py --campaign <campaign> ...`
+3. `bash scripts/generate_avatar_video.sh <campaign>`
