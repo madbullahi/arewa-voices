@@ -13,7 +13,9 @@ An open toolkit for making short, accurate, Hausa- and English-language social m
 
 `campaigns/out-of-school-children/` is a back-to-school awareness campaign aimed at parents and community leaders.
 
-More issues are planned (see `docs/roadmap.md`), including health and nutrition, farming and climate, and verified safety information.
+`campaigns/health-nutrition/` is a first-1,000-days campaign on breastfeeding, complementary foods and early clinic visits.
+
+More issues are planned (see `docs/roadmap.md`), including farming and climate, and verified safety information.
 
 ## Hardware
 

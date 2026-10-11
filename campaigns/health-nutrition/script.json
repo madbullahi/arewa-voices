@@ -1,0 +1,40 @@
+{
+  "campaign": "health-nutrition",
+  "title_en": "Strong from the start",
+  "title_ha": "TODO: Hausa title by a native speaker",
+  "audience": "Mothers, fathers, grandmothers and community health volunteers in Northern Nigeria",
+  "focus": "The first 1,000 days: exclusive breastfeeding to six months, varied complementary foods, and early clinic visits for a child who is losing weight",
+  "review_status": {
+    "hausa_reviewed": false,
+    "facts_sourced": "conflicting: see sources.md; script uses no statistics until resolved",
+    "health_reviewed": false
+  },
+  "video": {
+    "presenter_prompt": "A kind Northern Nigerian female community health worker in a light blue uniform and headscarf, speaking warmly to the camera in a clean, bright primary health care clinic",
+    "script_en": "A child's first one thousand days shape their whole life. For the first six months, give your baby only breast milk, not even water. From six months, add soft family foods: grains, beans, eggs, vegetables and fruit. If your child is losing weight, or their arms are getting thin, take them to the clinic early. Treatment is available. Strong children start with us.",
+    "script_ha": "TODO: Hausa translation by a native speaker"
+  },
+  "images": [
+    {
+      "name": "presenter",
+      "width": 768,
+      "height": 1344,
+      "seed": 21,
+      "prompt": "A photorealistic portrait of a kind Northern Nigerian female community health worker in a light blue uniform and headscarf, facing the camera with a reassuring smile, in a clean, bright primary health care clinic, soft natural light, vertical framing from the chest up"
+    },
+    {
+      "name": "poster_en",
+      "width": 768,
+      "height": 1344,
+      "seed": 22,
+      "prompt": "A warm, hopeful flat illustration of a Northern Nigerian mother in a colourful wrapper and headscarf breastfeeding her baby in the shade of a tree, soft earthy colours, clean modern style, with the headline text \"Only breast milk for 6 months\" in large bold letters at the top"
+    },
+    {
+      "name": "food_card_en",
+      "width": 1344,
+      "height": 768,
+      "seed": 23,
+      "prompt": "A bright top-down photograph of a colourful, healthy child's meal on a wooden table: millet porridge, beans, a boiled egg, leafy green vegetables and sliced pawpaw, with the text \"From 6 months: add family foods\" in bold white letters"
+    }
+  ]
+}
