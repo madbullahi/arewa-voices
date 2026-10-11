@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+external/
+weights/
+campaigns/*/output/
+campaigns/*/audio/*.wav

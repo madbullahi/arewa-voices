@@ -1,0 +1,31 @@
+{
+  "campaign": "out-of-school-children",
+  "title_en": "Every child in school",
+  "title_ha": "DRAFT - needs Hausa review: Kowane yaro a makaranta",
+  "audience": "Parents, guardians and community leaders in Northern Nigeria",
+  "review_status": {
+    "hausa_reviewed": false,
+    "facts_sourced": false
+  },
+  "video": {
+    "presenter_prompt": "A friendly middle-aged Northern Nigerian woman teacher wearing a colourful hijab, speaking warmly to the camera, sitting in a bright classroom with a chalkboard behind her",
+    "script_en": "Education opens doors for our children and our community. Enrolment for the new term is open. Talk to your local school or community leader today about enrolling your child. Every child deserves a chance to learn.",
+    "script_ha": "TODO: Hausa translation by a native speaker"
+  },
+  "images": [
+    {
+      "name": "poster_en",
+      "width": 768,
+      "height": 1344,
+      "seed": 42,
+      "prompt": "A bright, hopeful illustrated poster of smiling Northern Nigerian children in school uniforms walking to a village school at sunrise, warm colours, clean modern flat illustration style, with the headline text \"Every child in school\" in large bold letters at the top"
+    },
+    {
+      "name": "thumbnail_en",
+      "width": 1344,
+      "height": 768,
+      "seed": 7,
+      "prompt": "A clean social media thumbnail showing an open exercise book and pencil on a wooden school desk with a sunlit classroom background, with the text \"Back to school\" in bold white letters"
+    }
+  ]
+}
