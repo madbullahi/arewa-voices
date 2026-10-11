@@ -33,7 +33,7 @@ pip install -r requirements.txt
 python scripts/generate_image.py --campaign campaigns/out-of-school-children
 ```
 
-See `docs/setup.md` for full setup, including LongCat-Video.
+See `docs/setup.md` for full setup, including LongCat-Video, and `docs/cloud-gpu.md` for running everything on a rented GPU.
 
 ## Ethics
 
