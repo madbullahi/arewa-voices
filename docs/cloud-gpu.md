@@ -17,8 +17,8 @@ Tip: do all script writing, translation review and voiceover recording **before*
 
 ```bash
 ssh <user>@<machine-address>
-git clone https://github.com/madbullahi/arewa-voices
-cd arewa-voices
+git clone https://github.com/madbullahi/kimiyya
+cd kimiyya
 ```
 
 ## 3. Install
@@ -43,7 +43,7 @@ python -c "import torch; print(torch.cuda.device_count(), 'GPUs')"
 From your own computer:
 
 ```bash
-scp recording.wav <user>@<machine-address>:~/arewa-voices/
+scp recording.wav <user>@<machine-address>:~/kimiyya/
 ```
 
 ## 5. Generate
@@ -70,7 +70,7 @@ tmux attach -t gen   # reconnect later
 From your own computer:
 
 ```bash
-scp -r <user>@<machine-address>:~/arewa-voices/campaigns/out-of-school-children/output ./output
+scp -r <user>@<machine-address>:~/kimiyya/campaigns/out-of-school-children/output ./output
 ```
 
 The video is written inside `external/LongCat-Video` (check its output folder); copy it into the campaign's `output/` folder before downloading.

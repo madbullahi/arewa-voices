@@ -1,4 +1,6 @@
-# Arewa Voices
+# Kimiyya
+
+*Kimiyya* is Hausa for "science". (This project was called Arewa Voices.)
 
 An open toolkit for making short, accurate, Hausa- and English-language social media content about issues facing Northern Nigeria, using open-source AI models from [Meituan LongCat](https://github.com/meituan-longcat).
 
@@ -7,7 +9,8 @@ An open toolkit for making short, accurate, Hausa- and English-language social m
 1. **Script**: write a short campaign script in Hausa and English (`campaigns/<issue>/script.json`).
 2. **Visuals**: generate posters, thumbnails and quote cards with [LongCat-Image](https://github.com/meituan-longcat/LongCat-Image) (`scripts/generate_image.py`).
 3. **Video**: animate a presenter portrait to a voiceover with [LongCat-Video-Avatar 1.5](https://github.com/meituan-longcat/LongCat-Video) (`scripts/generate_avatar_video.sh`).
-4. **Publish**: export 9:16 clips for WhatsApp Status, TikTok, Instagram Reels, YouTube Shorts and Facebook.
+4. **Captions**: time the script against the voiceover with the Montreal Forced Aligner and write `.srt` captions and word timings, in Hausa or English, on a laptop CPU (`scripts/align.sh`, see `docs/captions.md`).
+5. **Publish**: export 9:16 clips for WhatsApp Status, TikTok, Instagram Reels, YouTube Shorts and Facebook.
 
 ## First campaign
 
@@ -23,6 +26,7 @@ More issues are planned (see `docs/roadmap.md`), including farming and climate, 
 | --- | --- | --- |
 | Images | LongCat-Image (6B) | 1 GPU with ~17 GB VRAM (CPU offload), e.g. RTX 4090 |
 | Video | LongCat-Video-Avatar 1.5 | Cloud GPU (A100/H100); 2 GPUs in the official commands, INT8 reduces VRAM |
+| Captions | Montreal Forced Aligner (`hausa_mfa`, `english_mfa`) | Any laptop CPU |
 
 No GPU? Write scripts and captions locally, then run generation on a rented cloud GPU.
 
@@ -30,7 +34,7 @@ No GPU? Write scripts and captions locally, then run generation on a rented clou
 
 ```bash
 git clone <this repo>
-cd arewa-voices
+cd kimiyya
 pip install -r requirements.txt
 python scripts/generate_image.py --campaign campaigns/out-of-school-children
 ```
@@ -43,4 +47,4 @@ Read `docs/ethics.md` before publishing. In short: use only presenter faces and 
 
 ## Licence
 
-Code: MIT. LongCat-Image is Apache 2.0; LongCat-Video weights are MIT.
+Code: MIT. LongCat-Image is Apache 2.0; LongCat-Video weights are MIT. The MFA Hausa model and dictionary are CC-BY-4.0.

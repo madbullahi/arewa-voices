@@ -6,6 +6,8 @@
 - [x] Avatar video wrapper (LongCat-Video-Avatar 1.5)
 - [x] Voiceover step (human recording or MMS text-to-speech)
 - [x] Cloud GPU guide
+- [x] Captions from the script with forced alignment (MFA, Hausa and English)
+- [ ] First captions test on a real Hausa recording (adult and child voice)
 - [ ] First campaign: out-of-school children (sources filled in; still needs Hausa script, Hausa review and survey year confirmed)
 - [ ] Test run on a cloud GPU
 - [ ] Pilot: 5 posts on one platform, measure reach and comments

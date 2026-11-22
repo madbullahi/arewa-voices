@@ -3,8 +3,8 @@
 ## 1. Images (LongCat-Image)
 
 ```bash
-conda create -n arewa python=3.10 -y
-conda activate arewa
+conda create -n kimiyya python=3.10 -y
+conda activate kimiyya
 pip install -r requirements.txt
 ```
 
@@ -56,3 +56,4 @@ The script stops if `script_ha` in `script.json` is still a TODO.
 1. `python scripts/generate_image.py --campaign <campaign>` (makes the presenter portrait, poster and thumbnail)
 2. `python scripts/make_voiceover.py --campaign <campaign> ...`
 3. `bash scripts/generate_avatar_video.sh <campaign>`
+4. `bash scripts/align.sh <campaign> [ha|en]` (captions and word timings; see `docs/captions.md`)
