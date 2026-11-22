@@ -30,30 +30,30 @@ huggingface-cli download meituan-longcat/LongCat-Video-Avatar-1.5 --local-dir ./
 Then from the repo root:
 
 ```bash
-bash scripts/generate_avatar_video.sh campaigns/out-of-school-children
+bash scripts/generate_avatar_video.sh topics/daphnia
 ```
 
 ## 3. Voiceover
 
-`scripts/make_voiceover.py` creates `campaigns/<issue>/audio/voiceover.wav` and the `avatar_input.json` that the video step needs.
+`scripts/make_voiceover.py` creates `topics/<topic>/audio/voiceover.wav` and the `avatar_input.json` that the video step needs.
 
 **Preferred: a human recording.** Record a consenting Hausa speaker, then:
 
 ```bash
-python scripts/make_voiceover.py --campaign campaigns/out-of-school-children --audio recording.wav
+python scripts/make_voiceover.py --topic topics/daphnia --audio recording.wav
 ```
 
 **Draft: text-to-speech.** Uses Meta's MMS models (`facebook/mms-tts-hau`, `facebook/mms-tts-eng`). They are licensed CC-BY-NC 4.0, so use them for drafts and non-commercial posts only.
 
 ```bash
-python scripts/make_voiceover.py --campaign campaigns/out-of-school-children --lang ha
+python scripts/make_voiceover.py --topic topics/daphnia --lang ha
 ```
 
 The script stops if `script_ha` in `script.json` is still a TODO.
 
 ## Full order of steps
 
-1. `python scripts/generate_image.py --campaign <campaign>` (makes the presenter portrait, poster and thumbnail)
-2. `python scripts/make_voiceover.py --campaign <campaign> ...`
-3. `bash scripts/generate_avatar_video.sh <campaign>`
-4. `bash scripts/align.sh <campaign> [ha|en]` (captions and word timings; see `docs/captions.md`)
+1. `python scripts/generate_image.py --topic <topic>` (makes the presenter portrait, poster and thumbnail)
+2. `python scripts/make_voiceover.py --topic <topic> ...`
+3. `bash scripts/generate_avatar_video.sh <topic>`
+4. `bash scripts/align.sh <topic> [ha|en]` (captions and word timings; see `docs/captions.md`)

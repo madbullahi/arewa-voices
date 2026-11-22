@@ -1,0 +1,34 @@
+{
+  "topic": "antibiotics-and-viruses",
+  "title_en": "Antibiotics don't cure a cold",
+  "title_ha": "TODO: Hausa title by a native speaker",
+  "audience": "Hausa-speaking adults who buy medicines from chemists and markets without a prescription",
+  "idea": "Antibiotics kill bacteria, not viruses. Colds and flu are caused by viruses, so antibiotics don't help them, and using antibiotics when they aren't needed helps bacteria become resistant.",
+  "terms": ["germ / microbe", "bacteria", "virus", "antibiotic"],
+  "review_status": {
+    "science_reviewed": false,
+    "hausa_reviewed": false,
+    "facts_sourced": "yes: see sources.md"
+  },
+  "video": {
+    "presenter_prompt": "A friendly Northern Nigerian male pharmacist in a white coat, speaking clearly to the camera in a tidy community pharmacy with shelves of medicine boxes behind him",
+    "script_en": "You have a cold, so you buy antibiotics. Stop. Antibiotics kill bacteria. But colds and flu are caused by viruses, and antibiotics do nothing to viruses. Most colds get better on their own in about a week. Taking antibiotics you don't need won't make you better faster. It helps bacteria learn to survive them, so one day, when you really need them, they may not work. Use antibiotics only when a health worker prescribes them.",
+    "script_ha": "TODO: Hausa script by a native speaker"
+  },
+  "images": [
+    {
+      "name": "presenter",
+      "width": 768,
+      "height": 1344,
+      "seed": 31,
+      "prompt": "A photorealistic portrait of a friendly Northern Nigerian male pharmacist in a white coat, facing the camera with a calm, reassuring expression, in a tidy community pharmacy with shelves of medicine boxes behind him, soft natural light, vertical framing from the chest up"
+    },
+    {
+      "name": "bacteria_vs_virus",
+      "width": 768,
+      "height": 1344,
+      "seed": 32,
+      "prompt": "A clean, friendly educational flat illustration comparing a rod-shaped bacterium on the left and a much smaller round virus particle with spikes on the right, soft earthy colours on a cream background, simple labels \"Bacteria\" and \"Virus\" in bold letters"
+    }
+  ]
+}

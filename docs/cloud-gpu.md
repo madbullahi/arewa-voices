@@ -1,6 +1,6 @@
 # Running on a rented cloud GPU
 
-This guide takes one campaign from script to finished video on a rented GPU, then shuts the machine down so you stop paying.
+This guide takes one topic from script to finished video on a rented GPU, then shuts the machine down so you stop paying.
 
 ## 1. Choose a machine
 
@@ -49,11 +49,11 @@ scp recording.wav <user>@<machine-address>:~/kimiyya/
 ## 5. Generate
 
 ```bash
-CAMPAIGN=campaigns/out-of-school-children
+TOPIC=topics/daphnia
 
-python scripts/generate_image.py --campaign $CAMPAIGN --high-vram
-python scripts/make_voiceover.py --campaign $CAMPAIGN --audio recording.wav
-bash scripts/generate_avatar_video.sh $CAMPAIGN
+python scripts/generate_image.py --topic $TOPIC --high-vram
+python scripts/make_voiceover.py --topic $TOPIC --audio recording.wav
+bash scripts/generate_avatar_video.sh $TOPIC
 ```
 
 For a single GPU, run the video step with `GPUS=1`. It is slower and may run out of memory on cards under 80 GB.
@@ -70,10 +70,10 @@ tmux attach -t gen   # reconnect later
 From your own computer:
 
 ```bash
-scp -r <user>@<machine-address>:~/kimiyya/campaigns/out-of-school-children/output ./output
+scp -r <user>@<machine-address>:~/kimiyya/topics/daphnia/output ./output
 ```
 
-The video is written inside `external/LongCat-Video` (check its output folder); copy it into the campaign's `output/` folder before downloading.
+The video is written inside `external/LongCat-Video` (check its output folder); copy it into the topic's `output/` folder before downloading.
 
 ## 7. Shut down
 

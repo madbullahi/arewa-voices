@@ -1,4 +1,4 @@
-"""Make a draft voiceover and the LongCat-Video-Avatar input file for a campaign.
+"""Make a draft voiceover and the LongCat-Video-Avatar input file for a topic.
 
 Uses Meta's MMS text-to-speech models (facebook/mms-tts-hau for Hausa,
 facebook/mms-tts-eng for English). These are licensed CC-BY-NC 4.0, i.e.
@@ -6,8 +6,8 @@ non-commercial only. For anything commercial or sponsored, record a consenting
 human speaker instead and use --audio to skip text-to-speech.
 
 Usage:
-    python scripts/make_voiceover.py --campaign campaigns/out-of-school-children --lang en
-    python scripts/make_voiceover.py --campaign campaigns/out-of-school-children --audio my_recording.wav
+    python scripts/make_voiceover.py --topic topics/daphnia --lang en
+    python scripts/make_voiceover.py --topic topics/daphnia --audio my_recording.wav
 """
 import argparse
 import json
@@ -41,15 +41,15 @@ def synthesise(text: str, lang: str, out_path: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--campaign", required=True)
+    parser.add_argument("--topic", "--campaign", dest="topic", required=True, help="Path to a topic folder")
     parser.add_argument("--lang", choices=MODELS, default="ha")
     parser.add_argument("--audio", help="Use this recorded audio file instead of text-to-speech")
     parser.add_argument("--presenter", default="presenter", help="Image name (from script.json) to animate")
     args = parser.parse_args()
 
-    campaign = Path(args.campaign).resolve()
-    script = json.loads((campaign / "script.json").read_text(encoding="utf-8"))
-    audio_dir = campaign / "audio"
+    topic = Path(args.topic).resolve()
+    script = json.loads((topic / "script.json").read_text(encoding="utf-8"))
+    audio_dir = topic / "audio"
     audio_dir.mkdir(exist_ok=True)
     voiceover = audio_dir / "voiceover.wav"
 
@@ -62,7 +62,7 @@ def main() -> None:
         synthesise(text, args.lang, voiceover)
     print(f"Voiceover: {voiceover}")
 
-    presenter = campaign / "output" / "images" / f"{args.presenter}.png"
+    presenter = topic / "output" / "images" / f"{args.presenter}.png"
     if not presenter.exists():
         print(f"Warning: {presenter} not found. Run generate_image.py first.")
 
@@ -71,7 +71,7 @@ def main() -> None:
         "cond_image": str(presenter),
         "cond_audio": {"person1": str(voiceover)},
     }
-    out = campaign / "avatar_input.json"
+    out = topic / "avatar_input.json"
     out.write_text(json.dumps(avatar_input, indent=2), encoding="utf-8")
     print(f"Avatar input: {out}")
 

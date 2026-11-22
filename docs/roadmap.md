@@ -1,27 +1,32 @@
 # Roadmap
 
-## Phase 1: Content kit (current)
-- [x] Repo structure and documentation
-- [x] Image generation script (LongCat-Image)
-- [x] Avatar video wrapper (LongCat-Video-Avatar 1.5)
-- [x] Voiceover step (human recording or MMS text-to-speech)
+## Phase 1: Toolkit (done)
+- [x] Image generation (LongCat-Image), avatar video (LongCat-Video-Avatar 1.5), voiceover (human recording or MMS text-to-speech)
 - [x] Cloud GPU guide
 - [x] Captions from the script with forced alignment (MFA, Hausa and English)
-- [ ] First captions test on a real Hausa recording (adult and child voice)
-- [ ] First campaign: out-of-school children (sources filled in; still needs Hausa script, Hausa review and survey year confirmed)
-- [ ] Test run on a cloud GPU
-- [ ] Pilot: 5 posts on one platform, measure reach and comments
+- [x] Refocused on discussing science in Hausa (formerly Arewa Voices awareness campaigns)
 
-## Phase 2: More issues
-- [ ] Health and nutrition: first-1,000-days campaign drafted (needs Hausa script, health review, and NDHS 2023–24 figures checked against the primary report)
-- [ ] Farming and climate (planting calendars, drought, fertiliser use)
-- [ ] Verified safety information (official channels only)
+## Phase 2: First topics (current)
+- [ ] `antibiotics-and-viruses`: science review, Hausa script, Hausa review
+- [ ] `daphnia`: science review, Hausa script, Hausa review
+- [ ] Glossary: native-speaker review of the first terms; agree a rule for coining new ones
+- [ ] First captions test on a real Hausa recording
+- [ ] Pilot: 5 explainers on one platform; measure reach, watch time and questions in the comments
 
-## Phase 3: Interaction
-- [ ] Hausa Q&A chatbot (WhatsApp or web) answering questions on each campaign topic
-- [ ] Simple dashboard tracking post performance
+## Topic ideas
+Short explainers, one idea each:
+- **Body and health:** what a virus is; how vaccines train the immune system; why you finish a course of antibiotics; what germs on hands are
+- **Water:** how water gets contaminated; why boiling works; what tiny animals in water tell us
+- **Living things:** how plants make food from sunlight; what DNA is; why mosquitoes spread malaria but flies don't
+- **Earth and sky:** why the harmattan is dusty; why the moon changes shape; what causes drought
+- **How science works:** what an experiment is; why one study isn't proof; how scientists check each other
+
+## Phase 3: Beyond clips
+- [ ] Glossary as a public web page (English ↔ Hausa science terms, with examples)
+- [ ] Hausa Q&A (WhatsApp or web) answering questions about published topics, with sources
+- [ ] Collaborations: Hausa-speaking scientists, teachers and science clubs to suggest, check and voice topics
 
 ## Open questions
-- Which platforms does the target audience use most (WhatsApp Status, Facebook, TikTok)?
-- Partner organisations for fact-checking and distribution (NGOs, university departments, state ministries)?
-- Budget for cloud GPU time.
+- Which platforms do Hausa-speaking audiences use most for learning (WhatsApp Status, Facebook, TikTok, YouTube)?
+- Who reviews Hausa scripts regularly, and who checks science outside my own field?
+- Presenter: recorded people, illustrated explainers, or an AI avatar?
