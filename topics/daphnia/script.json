@@ -8,7 +8,7 @@
   "review_status": {
     "science_reviewed": false,
     "hausa_reviewed": false,
-    "facts_sourced": "partial: test-method sources in sources.md; biology facts still to source"
+    "facts_sourced": "yes: see sources.md"
   },
   "video": {
     "presenter_prompt": "A cheerful young Northern Nigerian woman scientist in a lab coat and headscarf, speaking to the camera beside a glass beaker of pond water in a bright laboratory",
