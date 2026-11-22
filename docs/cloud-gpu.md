@@ -24,8 +24,8 @@ cd kimiyya
 ## 3. Install
 
 ```bash
-conda create -n arewa python=3.10 -y
-conda activate arewa
+conda create -n kimiyya python=3.10 -y
+conda activate kimiyya
 pip install -r requirements.txt
 ```
 
