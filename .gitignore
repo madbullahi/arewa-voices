@@ -3,6 +3,6 @@ __pycache__/
 .env
 external/
 weights/
-campaigns/*/output/
-campaigns/*/audio/*.wav
-campaigns/*/avatar_input.json
+topics/*/output/
+topics/*/audio/*.wav
+topics/*/avatar_input.json

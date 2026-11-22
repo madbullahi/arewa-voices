@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
-# Time a campaign's script against its voiceover with the Montreal Forced Aligner,
+# Time a topic's script against its voiceover with the Montreal Forced Aligner,
 # then write captions and word timings.
 #
 # Usage:
-#   bash scripts/align.sh campaigns/health-nutrition            # Hausa, audio/voiceover.wav
-#   bash scripts/align.sh campaigns/health-nutrition en         # English
-#   bash scripts/align.sh campaigns/health-nutrition ha take2.m4a
+#   bash scripts/align.sh topics/daphnia            # Hausa, audio/voiceover.wav
+#   bash scripts/align.sh topics/daphnia en         # English
+#   bash scripts/align.sh topics/daphnia ha take2.m4a
 #
 # Needs MFA in a conda environment (see docs/captions.md): conda activate mfa
-# Writes to campaigns/<issue>/output/:
+# Writes to topics/<topic>/output/:
 #   captions_<lang>.srt        a few words per caption
 #   captions_<lang>_words.srt  one word per caption
 #   words_<lang>.json          word timings
 set -euo pipefail
 
-campaign="${1:?Usage: bash scripts/align.sh <campaign-dir> [ha|en] [audio-file]}"
+topic="${1:?Usage: bash scripts/align.sh <topic-dir> [ha|en] [audio-file]}"
 lang="${2:-ha}"
-audio="${3:-$campaign/audio/voiceover.wav}"
+audio="${3:-$topic/audio/voiceover.wav}"
 here="$(cd "$(dirname "$0")" && pwd)"
 
 case "$lang" in
@@ -26,17 +26,17 @@ case "$lang" in
 esac
 
 command -v mfa >/dev/null || { echo "MFA not found. Run: conda activate mfa (install steps in docs/captions.md)" >&2; exit 1; }
-[ -f "$campaign/script.json" ] || { echo "No script.json in $campaign" >&2; exit 1; }
+[ -f "$topic/script.json" ] || { echo "No script.json in $topic" >&2; exit 1; }
 [ -f "$audio" ] || { echo "No audio at $audio (record one, or run make_voiceover.py first)" >&2; exit 1; }
 
-work="$campaign/output/align/$lang"
+work="$topic/output/align/$lang"
 corpus="$work/corpus"
 aligned="$work/aligned"
 rm -rf "$corpus" "$aligned"
 mkdir -p "$corpus" "$aligned"
 
 # The script text, exactly as read.
-python3 - "$campaign/script.json" "$lang" > "$corpus/voiceover.txt" <<'EOF'
+python3 - "$topic/script.json" "$lang" > "$corpus/voiceover.txt" <<'EOF'
 import json, sys
 text = json.load(open(sys.argv[1], encoding="utf-8"))["video"][f"script_{sys.argv[2]}"]
 if text.startswith("TODO"):
@@ -65,7 +65,7 @@ fi
 mfa align --clean "$corpus" "$model" "$model" "$aligned"
 
 grid="$aligned/voiceover.TextGrid"
-out="$campaign/output"
+out="$topic/output"
 python3 "$here/textgrid_to_srt.py" "$grid" --script "$corpus/voiceover.txt" \
   -o "$out/captions_${lang}.srt" --json "$out/words_${lang}.json"
 python3 "$here/textgrid_to_srt.py" "$grid" --script "$corpus/voiceover.txt" \

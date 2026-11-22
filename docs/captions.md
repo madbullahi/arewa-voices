@@ -1,8 +1,8 @@
 # Captions from the script (forced alignment)
 
-Every campaign already has its script, so captions don't need speech recognition. The [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/) (MFA) takes the voiceover and the script and works out when each word is spoken. `scripts/align.sh` turns that into:
+Every topic already has its script, so captions don't need speech recognition. The [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/) (MFA) takes the voiceover and the script and works out when each word is spoken. `scripts/align.sh` turns that into:
 
-| File (in `campaigns/<issue>/output/`) | Use |
+| File (in `topics/<topic>/output/`) | Use |
 | --- | --- |
 | `captions_<lang>.srt` | Captions of a few words each, broken at sentence ends and commas: upload with the video, or import into Concat |
 | `captions_<lang>_words.srt` | One word per caption, for word-by-word reels |
@@ -31,9 +31,9 @@ mfa model download dictionary english_mfa
 
 ```bash
 conda activate mfa
-bash scripts/align.sh campaigns/health-nutrition            # Hausa, uses audio/voiceover.wav
-bash scripts/align.sh campaigns/health-nutrition en         # English
-bash scripts/align.sh campaigns/health-nutrition ha take2.m4a   # a phone recording; converted with ffmpeg
+bash scripts/align.sh topics/daphnia            # Hausa, uses audio/voiceover.wav
+bash scripts/align.sh topics/daphnia en         # English
+bash scripts/align.sh topics/daphnia ha take2.m4a   # a phone recording; converted with ffmpeg
 ```
 
 The text comes from `script_ha` or `script_en` in `script.json`, so the script there must match what was read, word for word. Fix the script or re-record before aligning.
@@ -41,8 +41,8 @@ The text comes from `script_ha` or `script_en` in `script.json`, so the script t
 Options for the converter (run it on its own to re-cut captions without re-aligning):
 
 ```bash
-python scripts/textgrid_to_srt.py campaigns/<issue>/output/align/ha/aligned/voiceover.TextGrid \
-  --script campaigns/<issue>/output/align/ha/corpus/voiceover.txt \
+python scripts/textgrid_to_srt.py topics/<topic>/output/align/ha/aligned/voiceover.TextGrid \
+  --script topics/<topic>/output/align/ha/corpus/voiceover.txt \
   --max-words 4 --max-chars 24 -o captions_short.srt
 ```
 
@@ -55,13 +55,13 @@ python scripts/textgrid_to_srt.py campaigns/<issue>/output/align/ha/aligned/voic
 1. Generate pronunciations with the Hausa G2P model, check them, and add them to a custom dictionary:
    ```bash
    mfa model download g2p hausa_mfa
-   mfa g2p oovs.txt hausa_mfa campaign_words.dict
+   mfa g2p oovs.txt hausa_mfa science_words.dict
    ```
-2. Keep `campaign_words.dict` growing across campaigns, so each new clip aligns better. (Pointing `align.sh` at a merged dictionary is a small change when this is needed.)
+2. Keep `science_words.dict` growing across topics, so each new clip aligns better. (Pointing `align.sh` at a merged dictionary is a small change when this is needed.)
 
 ## Things to know
 
 - **Write the script the normal way.** Hausa is usually written without tone or vowel-length marks, and the dictionary follows that spelling. Keep the hooked letters (ɓ, ɗ, ƙ, ƴ) and ʼy.
-- **Children's voices may align poorly.** The model was trained on adult speakers; test with a child's clip before relying on it for the out-of-school-children campaign.
+- **Children's voices may align poorly.** The model was trained on adult speakers; test with a child's clip before using it for content voiced by children.
 - **One speaker per clip.** For interviews or several speakers, split the audio first.
 - **Unscripted audio** (interviews, field recordings) needs transcription first; WhisperX can do that, with a Hausa wav2vec2 model for its timing step.

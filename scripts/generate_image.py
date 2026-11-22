@@ -1,7 +1,7 @@
-"""Generate campaign images with LongCat-Image.
+"""Generate topic images with LongCat-Image.
 
 Usage:
-    python scripts/generate_image.py --campaign campaigns/out-of-school-children
+    python scripts/generate_image.py --topic topics/daphnia
 """
 import argparse
 import json
@@ -10,14 +10,14 @@ from pathlib import Path
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--campaign", required=True, help="Path to a campaign folder")
+    parser.add_argument("--topic", "--campaign", dest="topic", required=True, help="Path to a topic folder")
     parser.add_argument("--steps", type=int, default=50)
     parser.add_argument("--high-vram", action="store_true", help="Keep the whole model on GPU (faster)")
     args = parser.parse_args()
 
-    campaign = Path(args.campaign)
-    script = json.loads((campaign / "script.json").read_text(encoding="utf-8"))
-    out_dir = campaign / "output" / "images"
+    topic = Path(args.topic)
+    script = json.loads((topic / "script.json").read_text(encoding="utf-8"))
+    out_dir = topic / "output" / "images"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     import torch

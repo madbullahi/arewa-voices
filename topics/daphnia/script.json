@@ -1,0 +1,34 @@
+{
+  "topic": "daphnia",
+  "title_en": "The tiny animal that checks our water",
+  "title_ha": "TODO: Hausa title by a native speaker",
+  "audience": "Hausa-speaking students, teachers and anyone curious about ponds, wells and water safety",
+  "idea": "Daphnia, a water flea a few millimetres long, filters algae and bacteria out of the water it lives in, and because it is so sensitive, scientists use it to test whether chemicals are harmful to life in water.",
+  "terms": ["water", "experiment"],
+  "review_status": {
+    "science_reviewed": false,
+    "hausa_reviewed": false,
+    "facts_sourced": "partial: test-method sources in sources.md; biology facts still to source"
+  },
+  "video": {
+    "presenter_prompt": "A cheerful young Northern Nigerian woman scientist in a lab coat and headscarf, speaking to the camera beside a glass beaker of pond water in a bright laboratory",
+    "script_en": "Look closely at pond water and you may see tiny animals jumping. This is Daphnia, a water flea a few millimetres long. It sweeps algae and bacteria out of the water with its legs, all day long, so a pond full of Daphnia is clearer. Daphnia is also very sensitive. If a chemical harms it, the chemical may harm other life in the water too. That is why scientists around the world test new chemicals on Daphnia before they are allowed near rivers and lakes.",
+    "script_ha": "TODO: Hausa script by a native speaker"
+  },
+  "images": [
+    {
+      "name": "presenter",
+      "width": 768,
+      "height": 1344,
+      "seed": 41,
+      "prompt": "A photorealistic portrait of a cheerful young Northern Nigerian woman scientist in a white lab coat and headscarf, facing the camera with a curious smile, holding a glass beaker of greenish pond water, bright laboratory, vertical framing from the chest up"
+    },
+    {
+      "name": "daphnia_diagram",
+      "width": 768,
+      "height": 1344,
+      "seed": 42,
+      "prompt": "A clean scientific flat illustration of a Daphnia water flea seen from the side, transparent body with visible gut, eye and large branched antennae, tiny green algae particles drifting towards its legs, soft blue water background, minimal and accurate"
+    }
+  ]
+}
